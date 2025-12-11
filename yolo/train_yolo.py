@@ -1,7 +1,13 @@
+import os
 from ultralytics import YOLO
 
 def main():
-    dataset_yaml = '/home/caio/Área de trabalho/projeto_ML/yolo/data.yaml'
+    pasta_atual = os.path.dirname(os.path.abspath(__file__))
+    
+    dataset_yaml = os.path.join(pasta_atual, 'data.yaml')
+    
+    print(f"Usando configuração em: {dataset_yaml}")
+    
     
     model = YOLO('yolov8n.pt')
     
@@ -9,7 +15,7 @@ def main():
         data=dataset_yaml,
         epochs=100,
         imgsz=640,
-        batch=8,
+        batch=8,   
         device=0,
         name='treino_v1_osteoporose',
         patience=20,

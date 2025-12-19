@@ -1,4 +1,4 @@
-path: /home/caio/Área de trabalho/projeto_ML/yolo/dataset_yolo
+path: ./dataset_yolo
 train: train/images
 val: val/images
 
